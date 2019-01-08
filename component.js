@@ -13,4 +13,9 @@ class Component extends HTMLElement {
   }
 }
 
-export { Component };
+function register(name, cls) {
+  if (customElements.get(name)) { return; }
+  customElements.define(name, cls);
+}
+
+export { Component, register };

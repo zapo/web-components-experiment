@@ -1,4 +1,4 @@
-import { Component } from '/component.js';
+import { Component, register } from '/component.js';
 
 class Home extends Component {
   render() {
@@ -8,4 +8,5 @@ class Home extends Component {
   }
 }
 
+register('x-home', Home);
 export { Home };

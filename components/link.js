@@ -1,4 +1,4 @@
-import { Component } from '/component.js';
+import { Component, register } from '/component.js';
 import { history } from '/history.js';
 
 class Link extends Component {
@@ -19,4 +19,5 @@ class Link extends Component {
   }
 }
 
+register('x-link', Link);
 export { Link };

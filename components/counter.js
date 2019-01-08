@@ -1,4 +1,4 @@
-import { Component } from '/component.js';
+import { Component, register } from '/component.js';
 
 class Counter extends Component {
   static get observedAttributes() { return ['value']; }
@@ -28,4 +28,5 @@ class Counter extends Component {
   }
 }
 
+register('x-counter', Counter);
 export { Counter };

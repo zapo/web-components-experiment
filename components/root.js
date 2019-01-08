@@ -1,6 +1,7 @@
-import { Component } from '/component.js';
+import { Component, register } from '/component.js';
 import { history } from '/history.js';
 import { routes } from '/routes.js';
+import '/components/nav.js';
 
 class Root extends Component {
   connectedCallback() {
@@ -25,4 +26,5 @@ class Root extends Component {
   }
 }
 
+register('x-root', Root);
 export { Root };

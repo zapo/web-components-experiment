@@ -1,6 +1,7 @@
-import { Component } from '/component.js';
+import { Component, register } from '/component.js';
 import { history } from '/history.js';
 import { routes } from '/routes.js';
+import '/components/link.js';
 
 class Nav extends Component {
   render() {
@@ -17,4 +18,5 @@ class Nav extends Component {
   }
 }
 
+register('x-nav', Nav);
 export { Nav };

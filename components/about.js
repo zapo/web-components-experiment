@@ -1,4 +1,5 @@
-import { Component } from '/component.js';
+import { Component, register } from '/component.js';
+import '/components/counter.js';
 
 class About extends Component {
   constructor() {
@@ -24,4 +25,5 @@ class About extends Component {
   }
 }
 
+register('x-about', About);
 export { About };
