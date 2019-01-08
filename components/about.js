@@ -13,15 +13,15 @@ class About extends Component {
         This page holds an internal state,
         updated & passed down as attribute to value/onChange stateless component.
       </p>
-      <x-counter value="${ this.value }"></x-counter>
     `;
-
-    const counter = this.dom.querySelector('x-counter');
-
+    const counter = document.createElement('x-counter');
+    counter.setAttribute('value', this.value);
     counter.onChange = (v) => {
       this.value = v;
       this.render();
     }
+
+    this.dom.appendChild(counter);
   }
 }
 

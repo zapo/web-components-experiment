@@ -11,12 +11,14 @@ class Counter extends Component {
   render() {
     this.dom.innerHTML = `
       <button class="decrement">-</button>
-      <strong>${ this.value }</strong>
+      <strong class="value"></strong>
       <button class="increment">+</button>
     `;
 
     const decrement = this.dom.querySelector('.decrement');
     const increment = this.dom.querySelector('.increment');
+    const value = this.dom.querySelector('.value');
+    value.textContent = this.value;
 
     decrement.addEventListener('click', () => {
       this.onChange && this.onChange(this.value - 1);

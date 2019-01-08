@@ -4,7 +4,8 @@ function lazy(component, loader) {
   return class extends Component {
     async render() {
       await loader();
-      this.dom.innerHTML = `<${component}></${component}>`;
+      this.dom.innerHTML = '';
+      this.dom.appendChild(document.createElement(component));
     }
   };
 }

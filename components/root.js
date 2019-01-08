@@ -17,12 +17,13 @@ class Root extends Component {
   render() {
     const path = history.location.pathname;
     const routeEntry = [...routes.entries()].find(([route, _]) => path.startsWith(route));
-    const route = routeEntry ? routeEntry[1] : routes.get('/home') ;
-    this.dom.innerHTML = `
-      <x-nav></x-nav>
-      <h1>${ route.title }</h1>
-      <${route.component}></${route.component}>
-    `
+    const route = routeEntry ? routeEntry[1] : routes.get('/home');
+    this.dom.innerHTML = '';
+    this.dom.appendChild(document.createElement('x-nav'));
+    const heading = document.createElement('h1');
+    heading.textContent = route.title;
+    this.dom.appendChild(heading);
+    this.dom.appendChild(document.createElement(route.component));
   }
 }
 
