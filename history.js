@@ -3,14 +3,14 @@ class History {
     this.location = location;
     this.subscribers = [];
 
-    window.onpopstate = (event) => {
+    window.addEventListener('popstate', (event) => {
       this.emit(
         event.state,
         document.title,
         [location.pathname, location.search].join('')
       );
       return false;
-    };
+    });
   }
 
   pushState(state, title, path) {
